@@ -1,4 +1,4 @@
-## Written by genehaus
+## Written by H.J.Kim
 ## Date: May 31 2021 
 ##
 ## To Remove rRNA, tRNA, MT RNA on gencode.v38.annotation.gtf 
@@ -7,7 +7,7 @@
 ## gzip -d *.gz
 ## [Step2. to remove rRNA,tRNA and MT RNA]
 ## [Run & Python 3 & screen]$python Remove.rRNA.tRNA.MT.gft.python3.genecode.py gencode.v38.annotation.gtf
-## [Output & current dir] ./gencode.v38.annotation.gtf.no.rRNA.tRNA.gt
+## [Output & current dir] ./gencode.v38.annotation.gtf.no.rRNA.tRNA.gtf
 ## --------------------------------- ## 
 
 import os,sys
