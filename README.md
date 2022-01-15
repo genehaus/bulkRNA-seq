@@ -1,5 +1,4 @@
-# Written by Hyojin Kim
-# bulk RNA seq data analysis 
+# bulk RNA seq data analysis <br> Written by Hyojin Kim <br>  In Jan 2022
 
 <br>
 <br>
@@ -7,60 +6,60 @@
 1. Install nf-core/rnaseq<br>
 https://nf-co.re/rnaseq/3.5
 
-to map reads to reference genomes then make count matrix file
-
-brief explanation <br> 
-(1) input : fastq files  <br> 
-(2) output : count matrix file <br>
-
-
-```
-curl -s https://get.nextflow.io | bash
-conda create --name nf-core python=3.7 nf-core nextflow
-conda activate nf-core
-##(nf_core)$ nf-core download
-```
-
-
+	to map reads to reference genomes then make count matrix file
+	
+	brief explanation <br> 
+	(1) input : fastq files  <br> 
+	(2) output : count matrix file <br>
+	
+	
+	```
+	curl -s https://get.nextflow.io | bash
+	conda create --name nf-core python=3.7 nf-core nextflow
+	conda activate nf-core
+	##(nf_core)$ nf-core download
+	```
+	
+	
 
 2. Build genome index<br> 
 http://www.regulatory-genomics.org/hint/introduction/
 
-```
-cd /xxx/references/genecode_db_mice
-curl https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/GRCm39.primary_assembly.genome.fa.gz -O GRCm39.primary_assembly.genome.fa.gz 
-curl https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/gencode.vM28.annotation.gtf.gz -O gencode.vM28.annotation.gtf.gz
-mkdir genecode_db_index_mice
-```
+	```
+	cd /xxx/references/genecode_db_mice
+	curl https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/GRCm39.primary_assembly.genome.fa.gz -O GRCm39.primary_assembly.genome.fa.gz 
+	curl https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/gencode.vM28.annotation.gtf.gz -O gencode.vM28.annotation.gtf.gz
+	mkdir genecode_db_index_mice
+	```
+	
+	```
+	/xxx/STAR --runThreadN 20 \
+			--runMode genomeGenerate \
+			--genomeDir /xxx/references/genecode_db_index_mice/ \
+			--genomeFastaFiles /xxx/references/genecode_db_mice/GRCm39.primary_assembly.genome.fa \
+			--sjdbGTFfile /xxx/references/genecode_db_mice/gencode.vM28.annotation.gtf \
+			--sjdbOverhang 100 > genecode_db_index_mice.log.txt
+	```
 
-```
-/xxx/STAR --runThreadN 20 \
-		--runMode genomeGenerate \
-		--genomeDir /xxx/references/genecode_db_index_mice/ \
-		--genomeFastaFiles /xxx/references/genecode_db_mice/GRCm39.primary_assembly.genome.fa \
-		--sjdbGTFfile /xxx/references/genecode_db_mice/gencode.vM28.annotation.gtf \
-		--sjdbOverhang 100 > genecode_db_index_mice.log.txt
-```
+	output in genecode_db_index_mice.log.txt
 
-output in genecode_db_index_mice.log.txt
-
-```
-STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
-Jun 07 10:54:11 ..... started STAR run
-Jun 07 10:54:11 ... starting to generate Genome files
-Jun 07 10:54:56 ..... processing annotations GTF
-Jun 07 10:55:19 ... starting to sort Suffix Array. This may take a long time...
-Jun 07 10:55:34 ... sorting Suffix Array chunks and saving them to disk...
-Jun 07 11:03:37 ... loading chunks from disk, packing SA...
-Jun 07 11:05:09 ... finished generating suffix array
-Jun 07 11:05:09 ... generating Suffix Array index
-Jun 07 11:08:37 ... completed Suffix Array index
-Jun 07 11:08:38 ..... inserting junctions into the genome indices
-Jun 07 11:11:06 ... writing Genome to disk ...
-Jun 07 11:11:09 ... writing Suffix Array to disk ...
-Jun 07 11:11:30 ... writing SAindex to disk
-Jun 07 11:11:32 ..... finished successfully
-``` 
+	```
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+	Jun 07 10:54:11 ..... started STAR run
+	Jun 07 10:54:11 ... starting to generate Genome files
+	Jun 07 10:54:56 ..... processing annotations GTF
+	Jun 07 10:55:19 ... starting to sort Suffix Array. This may take a long time...
+	Jun 07 10:55:34 ... sorting Suffix Array chunks and saving them to disk...
+	Jun 07 11:03:37 ... loading chunks from disk, packing SA...
+	Jun 07 11:05:09 ... finished generating suffix array
+	Jun 07 11:05:09 ... generating Suffix Array index
+	Jun 07 11:08:37 ... completed Suffix Array index
+	Jun 07 11:08:38 ..... inserting junctions into the genome indices
+	Jun 07 11:11:06 ... writing Genome to disk ...
+	Jun 07 11:11:09 ... writing Suffix Array to disk ...
+	Jun 07 11:11:30 ... writing SAindex to disk
+	Jun 07 11:11:32 ..... finished successfully
+	``` 
 
 
 
