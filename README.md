@@ -471,5 +471,41 @@ http://www.regulatory-genomics.org/hint/introduction/
 
 
 
+6. SessionInfo
+
+
+```
+> sessionInfo()
+R version 4.1.0 (2021-05-18)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: CentOS Linux 7 (Core)
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+attached base packages:
+ [1] stats4    parallel  grid      stats     graphics  grDevices utils    
+ [8] datasets  methods   base     
+
+other attached packages:
+ [1] EnhancedVolcano_1.12.0 matrixStats_0.61.0     dorothea_1.5.0        
+ [4] progeny_1.14.0         erer_3.0               lmtest_0.9-39         
+ [7] zoo_1.8-9              rlist_0.4.6.2          GO.db_3.13.0          
+[10] AnnotationDbi_1.54.1   IRanges_2.26.0         S4Vectors_0.31.5      
+[13] goseq_1.44.0           geneLenDataBase_1.28.0 BiasedUrn_1.07        
+[16] data.table_1.14.2      vsn_3.60.0             Biobase_2.52.0        
+[19] BiocGenerics_0.38.0    glmpca_0.2.0.9000      edgeR_3.34.1          
+[22] limma_3.48.3           forcats_0.5.1          stringr_1.4.0         
+[25] purrr_0.3.4            readr_2.1.1            tidyr_1.1.4           
+[28] tibble_3.1.6           tidyverse_1.3.1        HTSFilter_1.32.0      
+[31] textshape_1.7.3        hexbin_1.28.2          ggrepel_0.9.1         
+[34] cowplot_1.1.1          dplyr_1.0.7            gridExtra_2.3         
+[37] pheatmap_1.0.12        reshape_0.8.8          ggplot2_3.3.5
+```
 
 	
