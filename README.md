@@ -273,6 +273,10 @@ http://www.regulatory-genomics.org/hint/introduction/
 
 	4-9. Add data to EdgeR object
 
+	# EdgeR : https://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf <br>
+	# TMM : https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25 <br> 
+
+
 	```
 	T <- DGEList(T, group=condition)
 	T <- calcNormFactors(T, method="TMM")
@@ -322,7 +326,8 @@ http://www.regulatory-genomics.org/hint/introduction/
 	```
 	
 	
-	4-12. Get DE gene
+	4-12. Get DE gene <br>
+	https://rdrr.io/bioc/edgeR/man/glmQLFTest.html
 
 	
 	```
@@ -353,7 +358,7 @@ http://www.regulatory-genomics.org/hint/introduction/
 
 		## I chose to use "quasi-likelihood (QL) F-test" to utilize F value 
 		## F value can be used to measure Z score with Log2FC later 
-	
+		## https://rdrr.io/bioc/edgeR/man/glmQLFTest.html	
 
         	Qlrt_fdr$table %>% write.table(file=paste0(outdir, "top_KOvsWT.FDR.edgeR.QLFtest.", contrast, ".txt"),
         	                        row.names = TRUE,
