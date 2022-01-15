@@ -148,12 +148,23 @@ Jun 07 11:11:32 ..... finished successfully
 	library(ggrepel)
 	library(matrixStats)
 	library(EnhancedVolcano)
+	'%ni%' = Negate('%in%')
 	```
 
+	4-2. read file 
 
-
-
-
+	``` 
+	indir <- "/xxx/7_nextflow_output/star_salmon/"
+	outdir <- "/xxx/out/"
+	if(!dir.exists(outdir)) dir.create(outdir);
+	
+	D <- "salmon.merged.gene_counts.tsv"
+	counts_df <- as.data.frame(read_delim(paste0(indir, D),
+                                "\t",
+                                escape_double = FALSE,
+                                trim_ws = TRUE))
+	```
+	
 
 
 
@@ -164,15 +175,15 @@ Jun 07 11:11:32 ..... finished successfully
 
 5. acknowledgement
 
-5-1.team
+	5-1.team
 
-https://www.medizin.rwth-aachen.de/cms/Medizin/Die-Fakultaet/Einrichtungen/~dgun/IZKF-Aachen/<br>
-
-5-2. website
-
-https://davetang.org/muse/2011/01/24/normalisation-methods-for-dge-data/
-
-https://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf
+	https://www.medizin.rwth-aachen.de/cms/Medizin/Die-Fakultaet/Einrichtungen/~dgun/IZKF-Aachen/<br>
+	
+	5-2. website
+	
+	https://davetang.org/muse/2011/01/24/normalisation-methods-for-dge-data/
+	
+	https://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf
 
 	
 
