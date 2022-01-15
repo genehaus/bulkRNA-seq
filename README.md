@@ -346,29 +346,27 @@ Jun 07 11:11:32 ..... finished successfully
 
         	lrt <- glmLRT(fit, contrast=my.contrasts[,contrast])
         	Qlrt <- glmQLFTest(Qfit, contrast=my.contrasts[,contrast])
-        	lrt %>%
-        	        write.table(file=paste0(outdir, "top_KOvsWT.edgeR.", contrast, ".txt"),
-        	              row.names = TRUE,
-        	              quote = FALSE,
-        	              sep="\t")
-	
+
 	
         	lrt_fdr <- topTags(lrt, n=dim(post_TMM)[1])
         	Qlrt_fdr <- topTags(Qlrt, n=dim(post_TMM)[1])
         	
-		lrt_fdr$table %>% write.table(file=paste0(outdir, "top_KOvsWT.FDR.edgeR.", contrast, ".txt"),
-        	                        row.names = TRUE,
-        	                        quote = FALSE,
-        	                        sep="\t")
+
+		## I chose to use "quasi-likelihood (QL) F-test" to utilize F value 
+		## F value can be used to measure Z score with Log2FC later 
+	
+
         	Qlrt_fdr$table %>% write.table(file=paste0(outdir, "top_KOvsWT.FDR.edgeR.QLFtest.", contrast, ".txt"),
         	                        row.names = TRUE,
         	                        quote = FALSE,
         	                        sep="\t")
+
 	
 	        Qlrt$df.total %>% write.table(file=paste0(outdir, "top_KOvsWT.FDR.edgeR.df.total.QLFtest.", contrast, ".txt"),
 	                                row.names = TRUE,
 	                                quote = FALSE,
 	                                sep="\t")
+
 	
 	        pdf(paste0(outdir, "pca.post.counts.", contrast, ".pdf"),width = 5, height = 5)
 	                summary(decideTests(lrt, p.value=0.05))
