@@ -171,6 +171,12 @@ http://www.regulatory-genomics.org/hint/introduction/
 
 	
 	```
+	cd /code/Remove_rRNA_tRNA_chrM/ # in this git directory 
+	python Remove.rRNA.tRNA.MT.gft.python3.genecode.py gencode.vM28.annotation.gtf
+	```
+	
+	
+	```
 	clear_G_db <- as.data.frame(read_delim("/xxx/references/genecode_db_mice/gencode.vM28.annotation.gtf.no.rRNA.tRNA.gtf",
                                 'gene_name "',
                                 col_names = FALSE,
@@ -273,8 +279,8 @@ http://www.regulatory-genomics.org/hint/introduction/
 
 	4-9. Add data to EdgeR object
 
-	# EdgeR : https://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf <br>
-	# TMM : https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25 <br> 
+	EdgeR : https://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf <br>
+	TMM : https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25 <br> 
 
 
 	```
