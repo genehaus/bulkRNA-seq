@@ -3,6 +3,9 @@
 <br>
 <br>
 
+
+This analysis is based on the data from mice.
+
 1. Install nf-core/rnaseq<br>
 https://nf-co.re/rnaseq/3.5
 
@@ -27,8 +30,8 @@ http://www.regulatory-genomics.org/hint/introduction/
 
 	```
 	cd /xxx/references/genecode_db_mice
-	curl https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/GRCm39.primary_assembly.genome.fa.gz -O GRCm39.primary_assembly.genome.fa.gz 
-	curl https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/gencode.vM28.annotation.gtf.gz -O gencode.vM28.annotation.gtf.gz
+	curl -O https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/GRCm39.primary_assembly.genome.fa.gz 
+	curl -O https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/gencode.vM28.annotation.gtf.gz
 	mkdir genecode_db_index_mice
 	```
 	
