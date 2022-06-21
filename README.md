@@ -1,4 +1,4 @@
-# bulk RNA seq data analysis <br> Written by H.J. Kim <br>  In Jan 2022
+## bulk RNA seq data analysis <br> Written by H.J. Kim <br>  In June 2022
 
 <br>
 <br>
@@ -269,9 +269,10 @@ http://www.regulatory-genomics.org/hint/introduction/
 	T <- T$filteredData
 	```
 	
-	if you don't have replicates 
-	try to remove based on the value matched to the 35 qualite of all read count. 
-	you can change the quantile cutoff
+	If you don't have replicates, <br>
+	try to remove lowely expressed genes <br>
+	based on the 35 qualite of all read count. <br> 
+	You can choose the quantile-based cutoff like 10%, 20%, etc. 
 	 
 	``` 
 	cutoff <- quantile(as.matrix(T), probs = c(0.35))[[1]]
@@ -284,7 +285,7 @@ http://www.regulatory-genomics.org/hint/introduction/
 	```
 	
 	
-	4-8. Make a density plot after gene filtering 
+	4-8. Make a density plot after gene filtering <br>
 
 	to check if the data distribution is more closely to normal distribution
 	
