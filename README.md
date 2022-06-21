@@ -177,7 +177,9 @@ http://www.regulatory-genomics.org/hint/introduction/
 	cd /code/Remove_rRNA_tRNA_chrM/ # in this git directory 
 	python Remove.rRNA.tRNA.MT.gft.python3.genecode.py gencode.vM28.annotation.gtf
 	```
-	
+
+	this example is about Mouse data 	
+
 	
 	```
 	clear_G_db <- as.data.frame(read_delim("/xxx/references/genecode_db_mice/gencode.vM28.annotation.gtf.no.rRNA.tRNA.gtf",
@@ -247,23 +249,38 @@ http://www.regulatory-genomics.org/hint/introduction/
 
 	4-6. Prepare meta of samples
 
+	https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7873980/
 		
 	```
-	condition <- gsub( paste0("_","[0-9]"),"", colnames(T))
+	colnames(T) <- gsub("__", "_", colnames(T))
+	condition <- gsub( paste0("_REP","[0-9]"),"", colnames(T))
 	targets <- data.frame(sample=colnames(T), condition=condition)
-	design <- model.matrix(~0+condition, data=targets$samples)
-	rownames(design) <- targets$sample
 	```
 	
 	
 	4-7. run HTSFilter in order to remove lowly expressed genes 
-
+	
 	https://github.com/andreamrau/HTSFilter
 	
+	if you have replicates for all conditions	
 	
 	```
 	T <- HTSFilter(as.matrix(T), condition, s.min = 0.1, normalization ="TMM", s.len=25, plot=TRUE)
-	T <- T$filteredData	
+	T <- T$filteredData
+	```
+	
+	if you don't have replicates 
+	try to remove based on the value matched to the 35 qualite of all read count. 
+	you can change the quantile cutoff
+	 
+	``` 
+	cutoff <- quantile(as.matrix(T), probs = c(0.35))[[1]]
+	print ("------------------------------")
+	print ("print 35% quantile for cutoff")
+	print (cutoff)
+	print ("------------------------------")
+	keep <- rowSums(as.matrix(T)) > cutoff
+	T <- T[keep,]
 	```
 	
 	
@@ -323,21 +340,35 @@ http://www.regulatory-genomics.org/hint/introduction/
 	
 	
 	```
-	gpca <- glmpca(post_TMM, L=2)
-	gpca.dat <- gpca$factors
+	gpca <- glmpca(T$counts, L=2)
+	gpca.dat <- gpca$factors	
 	gpca.dat$dex <- targets$condition
-	gpca.dat$cell <- targets$sample
+	gpca.dat$cell <- targets$condition
 	
-	pdf(paste0(outdir, "pca.post.TMM.pdf"),width = 5, height = 5)
-		ggplot(gpca.dat, aes(x = dim1, y = dim2, color = factor(dex))) +
-			  geom_point(size =3) + coord_fixed() + ggtitle("glmpca - Generalized PCA")
+	pdf(paste0(outdir, "pca.post.counts.pdf"),width = 5, height = 5)
+	ggplot(gpca.dat, aes(x = dim1, y = dim2, color = dex, shape = cell )) +
+		geom_point(size =3) + coord_fixed() + ggtitle("glmpca - Generalized PCA")
 	dev.off()
+	```
+
+
+	
+	4-12. if you want to jump to DESeq2, <br>
+	please stop here and save outputs. <br>
+
+	```	
+	T$counts %>% write.table(file=paste0(outdir, "filtered.count.txt"),
+					row.names = TRUE,
+					col.names = TRUE,
+					quote = FALSE,
+					sep="\t")
 	```
 	
 	
-	4-12. Get DE gene <br>
+	
+	4-12. Get DE gene by using EdgeR <br>
 	https://rdrr.io/bioc/edgeR/man/glmQLFTest.html
-
+	
 	
 	```
 	plotMDS(T) # MDA plot like PCA 
