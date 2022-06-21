@@ -259,7 +259,7 @@ http://www.regulatory-genomics.org/hint/introduction/
 	
 	4-7. run HTSFilter in order to remove lowly expressed genes 
 	
-	https://github.com/andreamrau/HTSFilter
+	ref: https://github.com/andreamrau/HTSFilter
 	
 	if you have replicates for all conditions	
 	
@@ -287,7 +287,6 @@ http://www.regulatory-genomics.org/hint/introduction/
 	4-8. Make a density plot after gene filtering <br>
 
 	to check if the data distribution is more closely to normal distribution
-	
 	
 	```
 	pdf(paste0(outdir, "density.post.pdf"),width = 5, height = 5)
@@ -353,9 +352,11 @@ http://www.regulatory-genomics.org/hint/introduction/
 
 
 	
-	4-12. if you want to jump to DESeq2, <br>
+	OF-NOTE. If you want to jump to DESeq2, <br>
 	please stop here and save outputs. <br>
-
+	
+	ref: http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html
+	
 	```	
 	T$counts %>% write.table(file=paste0(outdir, "filtered.count.txt"),
 					row.names = TRUE,
