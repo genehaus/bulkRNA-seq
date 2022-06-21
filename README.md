@@ -77,11 +77,11 @@ http://www.regulatory-genomics.org/hint/introduction/
 		mkdir /xxx/7_nextflow_out
 	
 	
-	3-2. to prepare the shell script to run nf-core/atacseq
+	3-2. to prepare the shell script to run nf-core/rnaseq in SLURM
 
 
 		#!/usr/XXX/bin/zsh
-		#SBATCH -J run_nf-core_atac
+		#SBATCH -J run_nf-core_rnaseq
 		#SBATCH -t 100:00:00
 		#SBATCH --ntasks-per-node=20
 		#NXF_OPTS='-Xms1g -Xmx4g'
@@ -100,14 +100,14 @@ http://www.regulatory-genomics.org/hint/introduction/
 						 --fasta $dir_fasta \
 						 --gtf $dir_gtf \
 						 --aligner star_salmon \
-						--outdir '/xxx/7_nextflow_out'
+						 --outdir '/xxx/7_nextflow_out'
 
 
 	(1) Here, 'xxx' should be your full directory 
 	
 	(2) how to make "mydata.csv" 
 
-	https://nf-co.re/rnaseq/usage#multiple-runs-of-the-same-sample
+	go to : https://nf-co.re/rnaseq/usage#multiple-runs-of-the-same-sample
 
 
 
