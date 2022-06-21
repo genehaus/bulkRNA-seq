@@ -351,7 +351,7 @@ http://www.regulatory-genomics.org/hint/introduction/
 	OF-NOTE. If you want to jump to DESeq2, <br>
 	please stop here and save outputs. <br>
 	
-	ref: http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html
+	Go to : http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html
 	
 	```	
 	T$counts %>% write.table(file=paste0(outdir, "filtered.count.txt"),
