@@ -249,7 +249,6 @@ http://www.regulatory-genomics.org/hint/introduction/
 
 	4-6. Prepare meta of samples
 
-	https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7873980/
 		
 	```
 	colnames(T) <- gsub("__", "_", colnames(T))
@@ -337,7 +336,7 @@ http://www.regulatory-genomics.org/hint/introduction/
 	```
 	
 	
-	4-11. Make PCA plot with post TMM-treated data
+	4-11. Make PCA plot with filtered count matrix data
 	
 	
 	```
@@ -368,7 +367,17 @@ http://www.regulatory-genomics.org/hint/introduction/
 	
 	
 	4-12. Get DE gene by using EdgeR <br>
-	https://rdrr.io/bioc/edgeR/man/glmQLFTest.html
+
+	what is glmGLFTest -> ref: https://rdrr.io/bioc/edgeR/man/glmQLFTest.html
+	
+	how to make a design matrix -> ref: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7873980/
+
+	Below is just an exmaple. <br>
+	
+	```
+	design <- model.matrix(~0+condition, data=targets$samples)
+	rownames(design) <- targets$sample
+	```
 	
 	
 	```
