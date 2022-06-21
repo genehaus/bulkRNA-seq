@@ -1,10 +1,23 @@
-## Written by H.J.Kim
-## Date: May 31 2021 
+## --------------------------------- ##
+## Written by genehaus
+## Date: May 31 2021
+## Updated : June 21 2022 
 ##
 ## To Remove rRNA, tRNA, MT RNA on gencode.v38.annotation.gtf 
-## [Step1. to download the gtf file
-## curl -O http://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_38/gencode.v38.annotation.gtf.gz
+## [Step1. to download the gtf file ] 
+## for human [ based on 21 June 2022] 
+## curl -O https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_40/gencode.v40.annotation.gtf.gz
 ## gzip -d *.gz
+##
+## for mouse [ based on 21 June 2022]
+## curl -O https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M29/gencode.vM29.annotation.gtf.gz 
+## gzip -d *.gz
+##
+## If you want to get the most-recently updated one, 
+## please go to 
+## human -> https://www.gencodegenes.org/human/
+## mouse -> https://www.gencodegenes.org/mouse/
+## 
 ## [Step2. to remove rRNA,tRNA and MT RNA]
 ## [Run & Python 3 & screen]$python Remove.rRNA.tRNA.MT.gft.python3.genecode.py gencode.v38.annotation.gtf
 ## [Output & current dir] ./gencode.v38.annotation.gtf.no.rRNA.tRNA.gtf
