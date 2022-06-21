@@ -89,18 +89,14 @@ http://www.regulatory-genomics.org/hint/introduction/
 	
 		source /xxx/anaconda3/bin/activate nf-core
 	
-		dir_fasta=/xxx/references/genecode_db/GRCh38.primary_assembly.genome.fa
+		dir_gtf=/xxx/references/genecode_db_mice/gencode.vM27.annotation.gtf
+		dir_fasta=/xxx/references/genecode_db_mice/GRCm39.primary_assembly.genome.fa
 		dir_star=/xxx/references/genecode_db_index_mice
 		dir_fq=/xxx/bulk_RNA/input
 	
 		cd $dir_fq
-		/xxx/nextflow run nf-core/rnaseq --input $dir_fq/mydata.csv \
-						 --gencode \
-						 --star_index $dir_star \
-						 --fasta $dir_fasta \
-						 --gtf $dir_gtf \
-						 --aligner star_salmon \
-						 --outdir '/xxx/7_nextflow_out'
+		cd $dir_fq
+		/xxx/nextflow run nf-core/rnaseq --input $dir_fq/mydata..csv --gencode --star_index $dir_star --fasta $dir_fasta --gtf $dir_gtf --aligner star_salmon --outdir '/xxx/7_nextflow_out'
 
 
 	(1) Here, 'xxx' should be your full directory 
