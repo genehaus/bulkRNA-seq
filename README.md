@@ -1,4 +1,4 @@
-## Bulk RNA seq data analysis <br> Written by Hyojin Kim <br> June 2022~June 2023
+## Bulk RNA seq data analysis <br> Written by Hyojin Kim <br>  Updated June 2023
 
 <br>
 <br>
