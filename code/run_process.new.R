@@ -5,7 +5,6 @@
 # Strategy 
 # ------------------------- # 
 # counts (Normalize) -> cpm (Normalize) -> TMM (inter-sample normalize) 
-# counts (Normalize) -> DESeq2 (DEG)
 
 
 library(ggplot2)
