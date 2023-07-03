@@ -1,11 +1,11 @@
-## bulk RNA seq data analysis <br> Written by Hyojin. Kim <br>  In June 2022
+## Bulk RNA seq data analysis <br> Written by Hyojin. Kim <br>  In June 2022
 
 <br>
 <br>
 
 
 This analysis is based on the data from mice. <br>
-For human data analysis, you can check my script through this link 
+For human data analysis, you can check my script through this link. <br> 
 https://github.com/genehaus/bulkRNA-seq_2021/blob/main/code/run_process.new.R
 
 1. Install nf-core/rnaseq<br>
