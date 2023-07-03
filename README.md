@@ -5,12 +5,12 @@
 
 For human data analysis, you can check my script through this link. <br> 
 https://github.com/genehaus/bulkRNA-seq_2021/blob/main/code/run_process.new.R <br>
-This pipeline used for this project. <br>
+This pipeline was applited to these projects. <br>
 
-	```
-	“Platelet-instructed SPP1(+) macrophages drive myofibroblast activation in fibrosis in a CXCL4-dependent manner”. Cell reports (2022) 
-	“Dissecting CD8+ T cell pathology of severe SARS-CoV-2 infection by single-cell immunoprofiling.” Frontiers in immunology (2022)  
-	```
+```
+“Platelet-instructed SPP1(+) macrophages drive myofibroblast activation in fibrosis in a CXCL4-dependent manner”. Cell reports (2022) 
+“Dissecting CD8+ T cell pathology of severe SARS-CoV-2 infection by single-cell immunoprofiling.” Frontiers in immunology (2022)  
+```
 
 <br>
 
