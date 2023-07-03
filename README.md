@@ -1,4 +1,4 @@
-## Bulk RNA seq data analysis <br> Written by Hyojin Kim <br> In June 2022~June 2023.
+## Bulk RNA seq data analysis <br> Written by Hyojin Kim <br> June 2022~June 2023
 
 <br>
 <br>
@@ -6,12 +6,15 @@
 For human data analysis, you can check my script through this link. <br> 
 https://github.com/genehaus/bulkRNA-seq_2021/blob/main/code/run_process.new.R <br>
 This pipeline used for this project. <br>
+
 	```
 	“Platelet-instructed SPP1(+) macrophages drive myofibroblast activation in fibrosis in a CXCL4-dependent manner”. Cell reports (2022) 
 	“Dissecting CD8+ T cell pathology of severe SARS-CoV-2 infection by single-cell immunoprofiling.” Frontiers in immunology (2022)  
 	```
+
 <br>
 
+##
 
 This analysis is based on the data from mice. <br>
 
