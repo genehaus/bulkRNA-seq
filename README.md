@@ -4,7 +4,10 @@
 <br>
 
 For human data analysis, you can check my script through this link. <br> 
+step1. Preprocessing <br> 
 https://github.com/genehaus/bulkRNA-seq_2021/blob/main/code/run_process.new.R <br>
+step2. Functional studies <br>
+https://github.com/genehaus/bulkRNA-seq/blob/main/code/run_DESeq2.2way_comparison.R <br>
 This pipeline was applited to these projects. <br>
 
 ```
@@ -12,7 +15,6 @@ This pipeline was applited to these projects. <br>
 “Dissecting CD8+ T cell pathology of severe SARS-CoV-2 infection by single-cell immunoprofiling.” Frontiers in immunology (2022)  
 ```
 
-<br>
 <br>
 
 ##
